@@ -1,0 +1,167 @@
+
+body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+    font-size: 18px;
+    color: #2D3748;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    min-height: 100vh;
+} 
+
+
+.header {
+    grid-area: header;
+    background-color: #63B3ED;
+    color: #FFFFFF;
+    padding: 20px;
+}
+.header h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 36px;
+    margin: 0;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #9cc654;
+    margin-right: 0;
+}
+
+
+.header-text {
+    margin-top: 10px;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+.about-me {
+    background-color: #E2E8F0;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.date-author {
+    color: #718096;
+    margin-top: 0;
+}
+
+
+.main-info h2 {
+    font-size: 32px;
+    color: #48BB78;
+    clear: both;
+} 
+.main-info p {
+    margin-bottom: 20px;
+}
+.sidebar{
+    padding: 0;
+}
+
+.sidebar h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 20px;
+}
+
+.sidebar h3:nth-of-type(1) { /* About Me heading */
+    color: #000000;
+}
+
+.sidebar h3:nth-of-type(2),
+.sidebar h3:nth-of-type(3) { /* Social Media and Archives headings */
+    color: #48BB78;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar a {
+    color: #4299E1;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+    
+.blog-image {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 20px 20px 0;
+    float: left; 
+}
+
+.blog-image-right {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    /* Margin for right float: top/right/bottom/left */
+    margin: 0 0 20px 20px; 
+    float: right; 
+}
+
+.blog-post {
+    margin-bottom: 40px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #2C5282;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .main-info,
+    .sidebar {
+        grid-column: 1 / 2;
+    }
+    .profile {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .header-content {
+        flex-direction: column;
+    }
+}
+
